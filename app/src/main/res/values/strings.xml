@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">wishlist</string>
+    <string name="title_home">홈</string>
+    <string name="title_buy_list">구매목록</string>
+    <string name="title_feed">피드</string>
+    <string name="title_setting">설정</string>
+</resources>
