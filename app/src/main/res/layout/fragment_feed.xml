@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
-    tools:context=".ui.feed.FeedFragment">
+    tools:context=".ui.views.feed.FeedFragment">
 
     <HorizontalScrollView
         android:id="@+id/filter_scroll_view"
@@ -73,6 +73,7 @@
     </HorizontalScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

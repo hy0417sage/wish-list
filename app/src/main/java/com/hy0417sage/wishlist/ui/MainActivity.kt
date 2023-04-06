@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.hy0417sage.wishlist.R
 import com.hy0417sage.wishlist.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
-
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navView.setupWithNavController(navController)
     }

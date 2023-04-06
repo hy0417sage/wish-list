@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
-    tools:context=".ui.buylist.BuyListFragment">
+    tools:context=".ui.views.buylist.BuyListFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="0dp"
@@ -23,9 +23,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="월별소비" />
-
     </com.google.android.material.tabs.TabLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

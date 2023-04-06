@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.hy0417sage.wishlist.ui.home.HomeFragment"
+        android:name="com.hy0417sage.wishlist.ui.views.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_buy_list"
-        android:name="com.hy0417sage.wishlist.ui.buylist.BuyListFragment"
+        android:name="com.hy0417sage.wishlist.ui.views.buylist.BuyListFragment"
         android:label="@string/title_buy_list"
         tools:layout="@layout/fragment_buy_list" />
 
     <fragment
         android:id="@+id/navigation_feed"
-        android:name="com.hy0417sage.wishlist.ui.feed.FeedFragment"
+        android:name="com.hy0417sage.wishlist.ui.views.feed.FeedFragment"
         android:label="@string/title_feed"
         tools:layout="@layout/fragment_feed" />
 
     <fragment
         android:id="@+id/navigation_setting"
-        android:name="com.hy0417sage.wishlist.ui.setting.SettingFragment"
+        android:name="com.hy0417sage.wishlist.ui.views.setting.SettingFragment"
         android:label="@string/title_setting"
         tools:layout="@layout/fragment_setting" />
 
