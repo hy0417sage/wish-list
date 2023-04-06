@@ -11,6 +11,7 @@ class HomeViewHolder(
     fun bind(wish: WishEntity) {
         with(binding) {
             titleText.text = wish.title
+            binding.imageView.clipToOutline = true
             Glide.with(binding.root)
                 .load(wish.image)
                 .into(binding.imageView)
