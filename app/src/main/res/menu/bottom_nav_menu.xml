@@ -7,14 +7,14 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_buy_list"
-        android:icon="@drawable/ic_baseline_shopping_basket_24"
-        android:title="@string/title_buy_list" />
-
-    <item
         android:id="@+id/navigation_feed"
         android:icon="@drawable/ic_baseline_feed_24"
         android:title="@string/title_feed" />
+
+    <item
+        android:id="@+id/navigation_buy_list"
+        android:icon="@drawable/ic_baseline_shopping_basket_24"
+        android:title="@string/title_buy_list" />
 
     <item
         android:id="@+id/navigation_setting"
