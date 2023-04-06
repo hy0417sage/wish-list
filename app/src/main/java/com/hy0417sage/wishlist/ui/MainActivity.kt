@@ -9,6 +9,7 @@ import com.hy0417sage.wishlist.R
 import com.hy0417sage.wishlist.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
