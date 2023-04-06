@@ -21,4 +21,5 @@
     <color name="ChipSelectStrokeColor">#6C6C6C</color>
     <color name="ChipSelectFillColor">#3B3B3B</color>
     <color name="ChipSelectTextColor">#FFFFFF</color>
+    <color name="DetailsBackground">#121212</color>
 </resources>
