@@ -6,10 +6,13 @@
     <color name="SecondaryVariant">#018786</color>
     <color name="Background">#1A94FF</color>
     <color name="Surface">#121212</color>
-    <color name="Error">#CF6679</color>
+<!--    <color name="Error">#CF6679</color>-->
     <color name="OnPrimary">#000000</color>
     <color name="OnSecondary">#000000</color>
     <color name="OnBackground">#FFFFFF</color>
     <color name="OnSurface">#FFFFFF</color>
     <color name="OnError">#000000</color>
+
+    <color name="TitleColor">#000000</color>
+    <color name="StatusBarColor">#000000</color>
 </resources>

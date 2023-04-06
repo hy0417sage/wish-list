@@ -1,6 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Wishlist" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Wishlist" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Primary toolbar. -->
+        <item name="toolBarStyle">@style/Widget.Wishlist.Toolbar</item>
+        <item name="toolbarWithArrowButtonStyle">@style/Widget.Wishlist.Toolbar.WithArrow</item>
+        <item name="toolbarWithCloseButtonStyle">@style/Widget.Wishlist.Toolbar.WithClose</item>
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Background</item>
         <item name="colorPrimaryVariant">@color/PrimaryVariant</item>
@@ -10,7 +16,7 @@
         <item name="colorSecondaryVariant">@color/SecondaryVariant</item>
         <item name="colorOnSecondary">@color/OnSecondary</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/Background</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/StatusBarColor</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

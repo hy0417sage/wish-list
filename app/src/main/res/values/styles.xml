@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Toolbar-->
+    <style name="Widget.Wishlist.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@color/Surface</item>
+        <item name="android:title">@null</item>
+    </style>
+
+    <!--    Toolbar Arrow-->
+    <style name="Widget.Wishlist.Toolbar.WithArrow" parent="Widget.Wishlist.Toolbar">
+        <item name="android:navigationIcon">@drawable/ic_baseline_arrow_back_24</item>
+        <item name="android:title">@null</item>
+    </style>
+
+    <!--    Toolbar Close-->
+    <style name="Widget.Wishlist.Toolbar.WithClose" parent="Widget.Wishlist.Toolbar">
+        <item name="android:navigationIcon">@drawable/ic_baseline_close_24</item>
+        <item name="android:title">@null</item>
+    </style>
+</resources>
