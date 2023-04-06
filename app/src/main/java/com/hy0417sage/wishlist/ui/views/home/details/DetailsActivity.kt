@@ -1,5 +1,7 @@
 package com.hy0417sage.wishlist.ui.views.home.details
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,5 +26,9 @@ class DetailsActivity : AppCompatActivity() {
         }
 
         Log.d("DetailsActivity", "$data")
+
+        binding.button.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(data?.url)))
+        }
     }
 }
