@@ -1,5 +1,6 @@
 package com.hy0417sage.wishlist.ui.views.home
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.hy0417sage.wishlist.data.model.WishEntity
 import com.hy0417sage.wishlist.data.repository.WishListRepository
@@ -9,10 +10,49 @@ import kotlinx.coroutines.launch
 import org.jsoup.Jsoup
 import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(
+    private val wishListRepository: WishListRepository,
+) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "Home"
+    val wholeLikeUserData: LiveData<List<WishEntity>> =
+        wishListRepository.wholeWishList.asLiveData()
+
+    fun insertWish(URL: String?) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val doc = Jsoup.connect(URL).get()
+            val total = doc.select("meta[property^=og:]")
+
+            val map = mutableMapOf<String, String>()
+            for (i in 0 until total.size) {
+                val tag = total[i]
+                when (tag.attr("property")) {
+                    "og:url" -> {
+                        map["url"] = tag.attr("content")
+                    }
+                    "og:title" -> {
+                        map["title"] = tag.attr("content")
+                    }
+                    "og:image" -> {
+                        map["image"] = tag.attr("content")
+                    }
+                    "og:description" -> {
+                        map["description"] = tag.attr("content")
+                    }
+                }
+            }
+            Log.d("HomeViewModel", "$map")
+            wishListRepository.insertWish(WishEntity(null,
+                image = map["image"],
+                title = map["title"],
+                price = map["url"]
+            ))
+        }
     }
-    val text: LiveData<String> = _text
+
+    fun deleteWish(wishEntity: WishEntity) {
+        viewModelScope.launch(Dispatchers.IO) {
+            wishListRepository.deleteWish(wishEntity)
+        }
+    }
 }
