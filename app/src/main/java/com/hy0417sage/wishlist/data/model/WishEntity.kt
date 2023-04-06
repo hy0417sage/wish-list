@@ -12,5 +12,8 @@ data class WishEntity(
     @PrimaryKey(autoGenerate = true) var id: Int? = null,
     @ColumnInfo(name = "title") val title: String?,
     @ColumnInfo(name = "image") val image: String?,
+    @ColumnInfo(name = "type") val type: String?,
     @ColumnInfo(name = "price") val price: String?,
+    @ColumnInfo(name = "reasons") val reasons: String?,
+    @ColumnInfo(name = "url") val url: String?,
 ) : Parcelable

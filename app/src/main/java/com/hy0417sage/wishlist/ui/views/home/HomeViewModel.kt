@@ -41,11 +41,16 @@ class HomeViewModel @Inject constructor(
                     }
                 }
             }
+
             Log.d("HomeViewModel", "$map")
-            wishListRepository.insertWish(WishEntity(null,
-                image = map["image"],
+            wishListRepository.insertWish(WishEntity(
+                id = null,
                 title = map["title"],
-                price = map["url"]
+                image = map["image"],
+                type = "",
+                price = "",
+                reasons = "",
+                url = URL,
             ))
         }
     }
