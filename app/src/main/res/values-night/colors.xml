@@ -6,7 +6,7 @@
     <color name="SecondaryVariant">#018786</color>
     <color name="Background">#1A94FF</color>
     <color name="Surface">#121212</color>
-<!--    <color name="Error">#CF6679</color>-->
+    <color name="Error">#CF6679</color>
     <color name="OnPrimary">#000000</color>
     <color name="OnSecondary">#000000</color>
     <color name="OnBackground">#FFFFFF</color>
@@ -15,4 +15,10 @@
 
     <color name="TitleColor">#000000</color>
     <color name="StatusBarColor">#000000</color>
+    <color name="ChipStrokeColor">#CECECE</color>
+    <color name="ChipFillColor">#ECECEC</color>
+    <color name="ChipTextColor">#000000</color>
+    <color name="ChipSelectStrokeColor">#6C6C6C</color>
+    <color name="ChipSelectFillColor">#3B3B3B</color>
+    <color name="ChipSelectTextColor">#FFFFFF</color>
 </resources>

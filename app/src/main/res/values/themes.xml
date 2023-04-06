@@ -7,6 +7,9 @@
         <item name="toolbarWithArrowButtonStyle">@style/Widget.Wishlist.Toolbar.WithArrow</item>
         <item name="toolbarWithCloseButtonStyle">@style/Widget.Wishlist.Toolbar.WithClose</item>
 
+        <!--        Chip-->
+        <item name="chipStyle">@style/Widget.Wishlist.Chip</item>
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Background</item>
         <item name="colorPrimaryVariant">@color/PrimaryVariant</item>

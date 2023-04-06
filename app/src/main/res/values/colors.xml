@@ -15,4 +15,10 @@
 
     <color name="TitleColor">#000000</color>
     <color name="StatusBarColor">#FFFFFF</color>
+    <color name="ChipStrokeColor">#CECECE</color>
+    <color name="ChipFillColor">#ECECEC</color>
+    <color name="ChipTextColor">#000000</color>
+    <color name="ChipSelectStrokeColor">#6C6C6C</color>
+    <color name="ChipSelectFillColor">#3B3B3B</color>
+    <color name="ChipSelectTextColor">#FFFFFF</color>
 </resources>
