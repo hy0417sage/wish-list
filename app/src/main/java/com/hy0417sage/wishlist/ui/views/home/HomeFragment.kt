@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.hy0417sage.wishlist.databinding.FragmentHomeBinding
 import com.hy0417sage.wishlist.ui.views.home.adapter.HomeAdapter
+import com.hy0417sage.wishlist.ui.views.home.details.DetailsActivity
 
 class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by activityViewModels()
@@ -38,6 +38,12 @@ class HomeFragment : Fragment() {
 
         viewModel.wholeLikeUserData.observe(viewLifecycleOwner) { data ->
             homeAdapter.submitList(data)
+        }
+
+        homeAdapter.setItemClickListener { data ->
+            startActivity(Intent(requireContext(), DetailsActivity::class.java).apply {
+                putExtra("data", data)
+            })
         }
 
         activity?.intent?.let { intent ->

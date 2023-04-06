@@ -9,6 +9,8 @@ import com.hy0417sage.wishlist.databinding.LayoutWishListViewholderBinding
 
 class HomeAdapter : ListAdapter<WishEntity, RecyclerView.ViewHolder>(HomeDiffUtil()) {
 
+    private lateinit var itemClickListener: OnItemClickListener
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
@@ -27,8 +29,19 @@ class HomeAdapter : ListAdapter<WishEntity, RecyclerView.ViewHolder>(HomeDiffUti
         position: Int,
     ) {
         if (holder is HomeViewHolder) {
-            val viewData = getItem(position) as WishEntity
-            holder.bind(viewData)
+            val wish = getItem(position) as WishEntity
+            holder.bind(wish)
+            holder.itemView.setOnClickListener {
+                itemClickListener.onClick(wish)
+            }
         }
+    }
+
+    fun interface OnItemClickListener {
+        fun onClick(wish: WishEntity)
+    }
+
+    fun setItemClickListener(onItemClickListener: OnItemClickListener) {
+        this.itemClickListener = onItemClickListener
     }
 }
