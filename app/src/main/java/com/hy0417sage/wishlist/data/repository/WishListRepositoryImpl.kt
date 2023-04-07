@@ -19,4 +19,8 @@ class WishListRepositoryImpl @Inject constructor(
     override suspend fun deleteWish(wish: WishEntity) {
         wishListDao.deleteWish(wish)
     }
+
+    override fun searchQuery(query: String): Flow<List<WishEntity>> {
+        return wishListDao.searchQuery(query)
+    }
 }

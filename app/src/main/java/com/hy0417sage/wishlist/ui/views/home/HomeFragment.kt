@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import com.hy0417sage.wishlist.R
 import com.hy0417sage.wishlist.databinding.FragmentHomeBinding
 import com.hy0417sage.wishlist.ui.base.BaseFragment
 import com.hy0417sage.wishlist.ui.views.home.adapter.HomeAdapter
@@ -22,7 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             adapter = homeAdapter
         }
 
-        viewModel.wholeLikeUserData.observe(viewLifecycleOwner) { data ->
+        viewModel.wholeWishListData.observe(viewLifecycleOwner) { data ->
             homeAdapter.submitList(data)
         }
 
@@ -42,5 +43,36 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 }
             }
         }
+
+        binding.filterChipGroup.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.chip_all -> {
+                    viewModel.wholeWishListData.observe(viewLifecycleOwner) { data ->
+                        homeAdapter.submitList(data)
+                    }
+                }
+                R.id.chip_beauty -> {
+                    viewModel.searchQuery("beauty").observe(viewLifecycleOwner) { data ->
+                        homeAdapter.submitList(data)
+                    }
+                }
+                R.id.chip_fashion -> {
+                    viewModel.searchQuery("fashion").observe(viewLifecycleOwner) { data ->
+                        homeAdapter.submitList(data)
+                    }
+                }
+                R.id.chip_tech -> {
+                    viewModel.searchQuery("tech").observe(viewLifecycleOwner) { data ->
+                        homeAdapter.submitList(data)
+                    }
+                }
+                R.id.chip_other -> {
+                    viewModel.searchQuery("other").observe(viewLifecycleOwner) { data ->
+                        homeAdapter.submitList(data)
+                    }
+                }
+            }
+        }
+
     }
 }

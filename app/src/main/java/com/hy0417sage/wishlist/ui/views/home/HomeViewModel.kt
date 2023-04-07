@@ -15,7 +15,7 @@ class HomeViewModel @Inject constructor(
     private val wishListRepository: WishListRepository,
 ) : ViewModel() {
 
-    val wholeLikeUserData: LiveData<List<WishEntity>> =
+    val wholeWishListData: LiveData<List<WishEntity>> =
         wishListRepository.wholeWishList.asLiveData()
 
     fun insertWish(URL: String?) {
@@ -47,7 +47,7 @@ class HomeViewModel @Inject constructor(
                 id = null,
                 title = map["title"],
                 image = map["image"],
-                type = "",
+                type = "beauty",
                 price = "",
                 reasons = "",
                 url = URL,
@@ -59,5 +59,9 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             wishListRepository.deleteWish(wishEntity)
         }
+    }
+
+    fun searchQuery(query: String): LiveData<List<WishEntity>> {
+        return wishListRepository.searchQuery(query).asLiveData()
     }
 }

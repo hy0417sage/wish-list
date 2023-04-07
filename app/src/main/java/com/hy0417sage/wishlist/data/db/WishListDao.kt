@@ -18,4 +18,7 @@ interface WishListDao {
 
     @Delete
     suspend fun deleteWish(wish: WishEntity)
+
+    @Query("SELECT * FROM wish_list WHERE type LIKE :query")
+    fun searchQuery(query: String): Flow<List<WishEntity>>
 }

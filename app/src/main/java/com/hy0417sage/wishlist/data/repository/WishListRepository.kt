@@ -7,4 +7,5 @@ interface WishListRepository {
     val wholeWishList: Flow<List<WishEntity>>
     suspend fun insertWish(wish: WishEntity)
     suspend fun deleteWish(wish: WishEntity)
+    fun searchQuery(query: String): Flow<List<WishEntity>>
 }
