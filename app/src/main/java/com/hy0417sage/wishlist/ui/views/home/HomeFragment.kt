@@ -2,6 +2,7 @@ package com.hy0417sage.wishlist.ui.views.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -38,7 +39,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 Intent.ACTION_SEND -> {
                     if (intent.type == "text/plain") {
                         val url = intent.getStringExtra(Intent.EXTRA_TEXT)
-                        viewModel.insertWish(url)
+                        startActivity(Intent(requireContext(), DetailsActivity::class.java).apply {
+                            putExtra("url", url)
+                        })
+//                        viewModel.insertWish(url)
                     }
                 }
             }

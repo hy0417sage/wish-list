@@ -18,12 +18,14 @@ class HomeViewModel @Inject constructor(
     val wholeWishListData: LiveData<List<WishEntity>> =
         wishListRepository.wholeWishList.asLiveData()
 
-    fun insertWish(URL: String?) {
+    private val _wishItem = MutableLiveData<WishEntity>()
+    val wishItem: LiveData<WishEntity> get() = _wishItem
+
+    fun dataUrl(URL: String?) {
+        val map = mutableMapOf<String, String>()
         viewModelScope.launch(Dispatchers.IO) {
             val doc = Jsoup.connect(URL).get()
             val total = doc.select("meta[property^=og:]")
-
-            val map = mutableMapOf<String, String>()
             for (i in 0 until total.size) {
                 val tag = total[i]
                 when (tag.attr("property")) {
@@ -41,12 +43,25 @@ class HomeViewModel @Inject constructor(
                     }
                 }
             }
-
             Log.d("HomeViewModel", "$map")
-            wishListRepository.insertWish(WishEntity(
+            _wishItem.postValue(WishEntity(
                 id = null,
                 title = map["title"],
                 image = map["image"],
+                type = "beauty",
+                price = "",
+                reasons = "",
+                url = URL,
+            ))
+        }
+    }
+
+    fun insertWish(URL: String?) {
+        viewModelScope.launch(Dispatchers.IO) {
+            wishListRepository.insertWish(WishEntity(
+                id = null,
+                title = "",
+                image = "",
                 type = "beauty",
                 price = "",
                 reasons = "",
