@@ -1,5 +1,7 @@
 package com.hy0417sage.wishlist.ui.views.home.details
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
@@ -32,10 +34,19 @@ class DetailsActivity : BaseActivity<ActivityDetailsBinding>(
                 .into(binding.imageView)
             binding.titleText.setText(data.title)
             binding.priceText.setText(data.price)
-            binding.button.setOnClickListener {
-                viewModel.insertWish(data) //저장하기
-                val text = "Item 을 저장하였습니다."
-                Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
+
+            if (data.id != null) {
+                binding.button.text = "구매하러 가기"
+                binding.button.setOnClickListener {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(data?.url)))
+                }
+            } else {
+                binding.button.text = "위시리스트에 담기"
+                binding.button.setOnClickListener {
+                    viewModel.insertWish(data) //저장하기
+                    val text = "Item 을 저장하였습니다."
+                    Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
