@@ -56,17 +56,9 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun insertWish(URL: String?) {
+    fun insertWish(wishEntity: WishEntity) {
         viewModelScope.launch(Dispatchers.IO) {
-            wishListRepository.insertWish(WishEntity(
-                id = null,
-                title = "",
-                image = "",
-                type = "beauty",
-                price = "",
-                reasons = "",
-                url = URL,
-            ))
+            wishListRepository.insertWish(wishEntity)
         }
     }
 
