@@ -80,4 +80,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         }
 
     }
+
+    override fun onStop() {
+        super.onStop()
+        activity?.intent?.action = Intent.ACTION_MAIN
+    }
 }
